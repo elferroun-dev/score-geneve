@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Score de Genève révisé · CHU Mohammed VI Tanger</title>
     <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -22,7 +22,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
+            padding: 15px;
             position: relative;
         }
 
@@ -68,12 +68,11 @@
             gap: 24px;
             position: relative;
             z-index: 10;
-            backdrop-filter: blur(2px);
         }
 
-        /* Sidebar institutionnelle */
+        /* ========== SIDEBAR ========== */
         .institution-sidebar {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.4);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.15);
@@ -122,6 +121,14 @@
             text-shadow: 0 2px 10px rgba(0,150,255,0.5);
         }
 
+        .service-name {
+            background: linear-gradient(135deg, #a8e6cf, #d4edfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
         .institution-divider {
             height: 2px;
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
@@ -129,7 +136,7 @@
         }
 
         .info-badge {
-            background: rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 20px;
             padding: 16px;
             border: 1px solid rgba(255,255,255,0.1);
@@ -148,20 +155,12 @@
             color: #5cc0ff;
         }
 
-        .service-name {
-            background: linear-gradient(135deg, #a8e6cf, #d4edfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
-            font-size: 1.3rem;
-        }
-
-        /* Carte principale */
+        /* ========== CARTE PRINCIPALE ========== */
         .main-card {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 48px;
             padding: 40px;
             color: white;
@@ -188,14 +187,16 @@
 
         .title-section p {
             font-size: 1.1rem;
-            opacity: 0.8;
+            opacity: 0.9;
             display: flex;
             align-items: center;
             gap: 8px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .score-global {
-            background: rgba(0, 30, 50, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 100px;
             padding: 16px 32px;
             border: 1px solid rgba(255,255,255,0.2);
@@ -208,7 +209,8 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            opacity: 0.7;
+            opacity: 0.8;
+            color: white;
         }
 
         .score-global .value {
@@ -219,7 +221,7 @@
             text-shadow: 0 0 30px rgba(255,215,0,0.5);
         }
 
-        /* Grille des critères */
+        /* ========== GRILLE DES CRITÈRES ========== */
         .criteria-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -228,18 +230,19 @@
         }
 
         .criterion-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 28px;
-            padding: 24px;
+            padding: 20px;
             transition: all 0.2s;
             cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
         }
 
         .criterion-card:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255,255,255,0.3);
+            background: rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 255, 255, 0.3);
             transform: translateY(-4px);
         }
 
@@ -256,21 +259,26 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .criterion-title i {
             color: #5cc0ff;
             font-size: 1.1rem;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
         }
 
         .points-badge {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             padding: 4px 10px;
             border-radius: 60px;
             font-size: 0.8rem;
             font-weight: 600;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             white-space: nowrap;
+            color: white;
+            backdrop-filter: blur(5px);
         }
 
         /* Toggles interactifs */
@@ -281,16 +289,18 @@
 
         .toggle-option {
             flex: 1;
-            background: rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 60px;
             padding: 10px 4px;
             text-align: center;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
             transition: all 0.15s;
             user-select: none;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
 
         .toggle-option.active {
@@ -312,8 +322,8 @@
         /* Select personnalisé pour fréquence */
         .freq-select {
             width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 60px;
             padding: 12px 16px;
             color: white;
@@ -332,12 +342,12 @@
             color: white;
         }
 
-        /* Résultats avancés */
+        /* ========== RÉSULTATS ========== */
         .result-panel {
-            background: rgba(0, 20, 30, 0.6);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 32px;
             padding: 32px;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             backdrop-filter: blur(10px);
             margin-top: 20px;
             transition: all 0.3s ease;
@@ -361,7 +371,7 @@
             font-size: 3.5rem;
             width: 80px;
             height: 80px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(0, 0, 0, 0.3);
             border-radius: 60px;
             display: flex;
             align-items: center;
@@ -372,10 +382,13 @@
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 4px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .prob-detail {
-            opacity: 0.8;
+            opacity: 0.9;
+            color: white;
         }
 
         .risk-level {
@@ -383,9 +396,10 @@
             font-weight: 600;
             padding: 12px 32px;
             border-radius: 80px;
-            background: rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.2);
             transition: all 0.3s ease;
+            color: white;
         }
 
         /* Couleurs pour chaque niveau de risque */
@@ -414,7 +428,7 @@
         }
 
         .btn-reset {
-            background: rgba(255,255,255,0.1);
+            background: rgba(0, 0, 0, 0.4);
             border: 1px solid rgba(255,255,255,0.2);
             color: white;
             padding: 16px 32px;
@@ -430,7 +444,7 @@
         }
 
         .btn-reset:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(0, 0, 0, 0.6);
             border-color: white;
         }
 
@@ -438,22 +452,123 @@
             display: flex;
             justify-content: space-between;
             margin-top: 20px;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255, 255, 255, 0.5);
             font-size:0.85rem;
         }
 
-        @media (max-width: 1100px) {
+        /* ========== VERSION MOBILE OPTIMISÉE ========== */
+        @media (max-width: 900px) {
             .dashboard {
                 grid-template-columns: 1fr;
             }
+            
             .criteria-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            body {
+                padding: 10px;
+            }
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 600px) {
+            .main-card {
+                padding: 20px 15px;
+                border-radius: 30px;
+            }
+            
+            .title-section h1 {
+                font-size: 2rem;
+            }
+            
+            .score-global {
+                min-width: 140px;
+                padding: 12px 20px;
+            }
+            
+            .score-global .value {
+                font-size: 3rem;
+            }
+            
             .criteria-grid {
                 grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .criterion-card {
+                padding: 18px;
+            }
+            
+            .criterion-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                margin-bottom: 15px;
+            }
+            
+            .criterion-title {
+                font-size: 1.1rem;
+            }
+            
+            .points-badge {
+                align-self: flex-start;
+            }
+            
+            .toggle-switches {
+                gap: 10px;
+            }
+            
+            .toggle-option {
+                padding: 12px 4px;
+                font-size: 1rem;
+            }
+            
+            .probability-banner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .prob-gauge {
+                width: 100%;
+            }
+            
+            .risk-level {
+                width: 100%;
+                text-align: center;
+                font-size: 1.3rem;
+                padding: 12px 20px;
+            }
+            
+            .footer-note {
+                flex-direction: column;
+                gap: 8px;
+                text-align: center;
+            }
+            
+            .btn-reset {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .institution-sidebar {
+                padding: 25px 15px;
+            }
+        }
+
+        /* Petits ajustements pour très petits écrans */
+        @media (max-width: 380px) {
+            .title-section h1 {
+                font-size: 1.6rem;
+            }
+            
+            .prob-gauge {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .prob-text h3 {
+                font-size: 1.6rem;
             }
         }
     </style>
@@ -462,10 +577,9 @@
     <div class="bg-shape"></div>
 
     <div class="dashboard">
-        <!-- Sidebar gauche : informations institutionnelles -->
+        <!-- Sidebar gauche -->
         <aside class="institution-sidebar">
             <div class="logo-area">
-                <!-- Logo CHU Mohammed VI Tanger (logo2.png) -->
                 <div class="chu-logo">
                     <img src="logo2.png" alt="CHU Mohammed VI Tanger">
                 </div>
@@ -487,7 +601,7 @@
                 </div>
                 <div class="badge-item">
                     <i class="fas fa-flask"></i>
-                    <span>Validation clinique <br> <small>Score Genève révisé</small></span>
+                    <span>Score Genève révisé</span>
                 </div>
             </div>
 
@@ -496,23 +610,23 @@
             </div>
         </aside>
 
-        <!-- Carte principale : calculateur -->
+        <!-- Carte principale -->
         <main class="main-card">
             <div class="main-header">
                 <div class="title-section">
                     <h1>Score de Genève<br>révisé</h1>
                     <p><i class="fas fa-lungs"></i> Probabilité d'embolie pulmonaire</p>
                 </div>
-                <div class="score-global" id="globalScoreDisplay">
+                <div class="score-global">
                     <div class="label">Score total</div>
                     <div class="value" id="totalScore">0</div>
                 </div>
             </div>
 
-            <!-- Grille des critères interactifs (8 critères) -->
+            <!-- Grille des critères (8 critères) -->
             <div class="criteria-grid" id="criteriaContainer">
                 <!-- Âge > 65 ans -->
-                <div class="criterion-card" data-criterion="age">
+                <div class="criterion-card">
                     <div class="criterion-header">
                         <span class="criterion-title"><i class="fas fa-calendar"></i> Âge > 65 ans</span>
                         <span class="points-badge">1 pt</span>
@@ -524,7 +638,7 @@
                 </div>
 
                 <!-- Antécédent TVP ou EP -->
-                <div class="criterion-card" data-criterion="history">
+                <div class="criterion-card">
                     <div class="criterion-header">
                         <span class="criterion-title"><i class="fas fa-history"></i> Antécédent TVP/EP</span>
                         <span class="points-badge">3 pts</span>
@@ -536,7 +650,7 @@
                 </div>
 
                 <!-- Chirurgie/fracture récente -->
-                <div class="criterion-card" data-criterion="surgery">
+                <div class="criterion-card">
                     <div class="criterion-header">
                         <span class="criterion-title"><i class="fas fa-bone"></i> Chirurgie/fracture ≤ 1 mois</span>
                         <span class="points-badge">2 pts</span>
@@ -548,7 +662,7 @@
                 </div>
 
                 <!-- Néoplasie active -->
-                <div class="criterion-card" data-criterion="cancer">
+                <div class="criterion-card">
                     <div class="criterion-header">
                         <span class="criterion-title"><i class="fas fa-dna"></i> Néoplasie active</span>
                         <span class="points-badge">2 pts</span>
@@ -560,7 +674,7 @@
                 </div>
 
                 <!-- Hémoptysie -->
-                <div class="criterion-card" data-criterion="hemoptysis">
+                <div class="criterion-card">
                     <div class="criterion-header">
                         <span class="criterion-title"><i class="fas fa-lungs"></i> Hémoptysie</span>
                         <span class="points-badge">2 pts</span>
@@ -572,7 +686,7 @@
                 </div>
 
                 <!-- Douleur unilatérale membre -->
-                <div class="criterion-card" data-criterion="pain">
+                <div class="criterion-card">
                     <div class="criterion-header">
                         <span class="criterion-title"><i class="fas fa-leg"></i> Douleur unilatérale membre</span>
                         <span class="points-badge">3 pts</span>
@@ -584,7 +698,7 @@
                 </div>
 
                 <!-- Douleur palpation veines membre inférieur -->
-                <div class="criterion-card" data-criterion="tenderness">
+                <div class="criterion-card">
                     <div class="criterion-header">
                         <span class="criterion-title"><i class="fas fa-hand"></i> Douleur palpation veines MI</span>
                         <span class="points-badge">4 pts</span>
@@ -596,7 +710,7 @@
                 </div>
 
                 <!-- Fréquence cardiaque -->
-                <div class="criterion-card" data-criterion="hr">
+                <div class="criterion-card">
                     <div class="criterion-header">
                         <span class="criterion-title"><i class="fas fa-heartbeat"></i> Fréquence cardiaque</span>
                         <span class="points-badge">0/3/5 pts</span>
@@ -609,7 +723,7 @@
                 </div>
             </div>
 
-            <!-- Panneau de résultat interactif -->
+            <!-- Résultat -->
             <div class="result-panel" id="resultPanel">
                 <div class="probability-banner">
                     <div class="prob-gauge">
@@ -627,20 +741,19 @@
                 </div>
 
                 <div style="display: flex; justify-content: flex-end; margin-top: 25px;">
-                    <button class="btn-reset" id="resetBtn"><i class="fas fa-undo-alt"></i> Réinitialiser l'évaluation</button>
+                    <button class="btn-reset" id="resetBtn"><i class="fas fa-undo-alt"></i> Réinitialiser</button>
                 </div>
             </div>
 
             <div class="footer-note">
-                <span><i class="far fa-clock"></i> Mise à jour en temps réel</span>
-                <span>Service de Pneumologie · CHU Mohammed VI Tanger</span>
+                <span><i class="far fa-clock"></i> Mise à jour temps réel</span>
+                <span>Service Pneumologie · CHU Tanger</span>
             </div>
         </main>
     </div>
 
     <script>
         (function() {
-            // Gestion des toggles (Oui/Non)
             const toggleGroups = document.querySelectorAll('.toggle-switches');
             const heartSelect = document.getElementById('heartRateSelect');
 
@@ -651,30 +764,20 @@
             const probIcon = document.getElementById('probIcon');
             const resultPanel = document.getElementById('resultPanel');
 
-            // Variables pour stocker les valeurs (8 critères)
-            let ageVal = 0;
-            let historyVal = 0;
-            let surgeryVal = 0;
-            let cancerVal = 0;
-            let hemoptysisVal = 0;
-            let painVal = 0;
-            let tendernessVal = 0;
-            let hrVal = 0;
+            // Variables pour les 8 critères
+            let ageVal = 0, historyVal = 0, surgeryVal = 0, cancerVal = 0;
+            let hemoptysisVal = 0, painVal = 0, tendernessVal = 0, hrVal = 0;
 
-            // Initialiser les événements pour les toggles
+            // Événements pour les toggles
             toggleGroups.forEach(group => {
                 const options = group.querySelectorAll('.toggle-option');
                 options.forEach(opt => {
                     opt.addEventListener('click', function(e) {
                         const groupName = this.dataset.group;
-                        // Désactiver tous les du même groupe
                         const siblings = document.querySelectorAll(`.toggle-option[data-group="${groupName}"]`);
-                        siblings.forEach(sib => {
-                            sib.classList.remove('active');
-                        });
+                        siblings.forEach(sib => sib.classList.remove('active'));
                         this.classList.add('active');
 
-                        // Mettre à jour la valeur
                         const value = parseInt(this.dataset.value, 10);
                         switch(groupName) {
                             case 'age': ageVal = value; break;
@@ -685,26 +788,22 @@
                             case 'pain': painVal = value; break;
                             case 'tenderness': tendernessVal = value; break;
                         }
-
-                        updateScoreAndUI();
+                        updateScore();
                     });
                 });
             });
 
-            // Écouteur pour le select
             heartSelect.addEventListener('change', function() {
                 hrVal = parseInt(this.value, 10);
-                updateScoreAndUI();
+                updateScore();
             });
 
-            // Fonction de mise à jour du score et des couleurs
-            function updateScoreAndUI() {
+            function updateScore() {
                 const total = ageVal + historyVal + surgeryVal + cancerVal + 
                              hemoptysisVal + painVal + tendernessVal + hrVal;
                 totalSpan.textContent = total;
 
-                // Déterminer le niveau
-                let probText = '', interpretation = '', iconHtml = '', badgeHtml = '', panelClass = '';
+                let probText, interpretation, iconHtml, badgeHtml, panelClass;
 
                 if (total <= 3) {
                     probText = 'Faible';
@@ -730,31 +829,20 @@
                 interpretText.textContent = interpretation;
                 probIcon.innerHTML = iconHtml;
                 riskBadge.innerHTML = badgeHtml;
-
-                // Appliquer la classe de couleur au panel
-                resultPanel.classList.remove('faible', 'intermédiaire', 'elevée');
-                resultPanel.classList.add(panelClass);
+                resultPanel.className = `result-panel ${panelClass}`;
             }
 
-            // Réinitialisation
             document.getElementById('resetBtn').addEventListener('click', function() {
-                // Remettre tous les toggles "Non" actifs
-                document.querySelectorAll('.toggle-option[data-value="0"]').forEach(opt => {
-                    opt.click();
-                });
-                // Remettre le select à 0
+                document.querySelectorAll('.toggle-option[data-value="0"]').forEach(opt => opt.click());
                 heartSelect.value = '0';
                 hrVal = 0;
-                // Réinitialiser toutes les variables
-                ageVal = 0; historyVal = 0; surgeryVal = 0; cancerVal = 0;
-                hemoptysisVal = 0; painVal = 0; tendernessVal = 0;
-                updateScoreAndUI();
+                ageVal = historyVal = surgeryVal = cancerVal = 0;
+                hemoptysisVal = painVal = tendernessVal = 0;
+                updateScore();
             });
 
-            // Synchroniser les variables avec l'état initial
-            ageVal = 0; historyVal = 0; surgeryVal = 0; cancerVal = 0;
-            hemoptysisVal = 0; painVal = 0; tendernessVal = 0; hrVal = 0;
-            updateScoreAndUI();
+            // Initialisation
+            updateScore();
         })();
     </script>
 </body>
